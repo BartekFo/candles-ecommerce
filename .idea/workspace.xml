@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8c28c6d-255c-47f9-a171-8cd1c4c77793" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/firebase/firebaseConfig.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/firebase/signInWithGoogle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/firebase/signWithEmail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contextProviders/authProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +29,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="29sptCY4Dh7l5Bvk2tIgYBI1e7D" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,6 +47,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/bartekformanowski/Desktop/candles-ecommerce/node_modules/prettier",
     "ts.external.directory.path": "/Users/bartekformanowski/Desktop/candles-ecommerce/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -47,6 +57,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/api/firebase" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>

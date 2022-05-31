@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8c28c6d-255c-47f9-a171-8cd1c4c77793" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/googleIcon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/login/SignInForm/SignInForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/login/SignInForm/signInFormSchema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -52,6 +52,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/login/SignInForm" />
       <recent name="$PROJECT_DIR$/src/assets/icons" />
       <recent name="$PROJECT_DIR$/src/api/firebase" />
       <recent name="$PROJECT_DIR$/src" />

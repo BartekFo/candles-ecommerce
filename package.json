@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.10",
     "@masterborn/eslint-config": "^0.0.14",
     "@next/bundle-analyzer": "^12.1.6",
     "@svgr/webpack": "^6.2.1",

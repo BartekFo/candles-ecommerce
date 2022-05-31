@@ -1,4 +1,7 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
+
+import { GoogleIcon } from '@assets/icons';
 
 const Login: NextPage = () => (
   <div className="flex w-screen h-screen justify-center items-center">
@@ -27,7 +30,24 @@ const Login: NextPage = () => (
               className="input input-bordered w-full max-w-xs"
             />
           </div>
+          <button type="submit" className="btn btn-primary btn-block mt-5">
+            Sign in
+          </button>
         </form>
+        <div className="divider" />
+        <div className="prose">
+          <p className="mb-1">You don&apos;t have account yet?</p>
+          <Link href="/signup">
+            <a>Sign up</a>
+          </Link>
+        </div>
+        <div className="divider">OR</div>
+        <button type="button" className="btn">
+          <div className="mr-3">
+            <GoogleIcon />
+          </div>
+          Sign in with google
+        </button>
       </div>
     </div>
   </div>

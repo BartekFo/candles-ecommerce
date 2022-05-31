@@ -13,5 +13,6 @@ module.exports = {
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
     'prettier/prettier': ['error'],
     'prefer-arrow-callback': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
 };

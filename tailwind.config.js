@@ -3,5 +3,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('daisyui')],
+  // eslint-disable-next-line global-require
+  plugins: [require('daisyui'), require('@tailwindcss/typography')],
 };

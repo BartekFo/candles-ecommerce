@@ -90,7 +90,7 @@ const Home: NextPage = () => (
       </ul>
     </div>
     <div className="navbar-end">
-      <Link href="/login">
+      <Link href={Route.login}>
         <a className="btn">Get started</a>
       </Link>
     </div>

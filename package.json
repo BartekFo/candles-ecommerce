@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@firebase/auth": "^0.20.2",
     "@hookform/resolvers": "^2.8.10",
     "@masterborn/eslint-config": "^0.0.14",
     "@next/bundle-analyzer": "^12.1.6",

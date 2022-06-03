@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { GoogleIcon } from '@assets/icons';
 import LoginFormSchema, {
   LoginFormDefaultValues,
   defaultValues,
@@ -20,12 +19,11 @@ const SignInForm = (): JSX.Element => {
     resolver: zodResolver(LoginFormSchema),
   });
   const {
-    user,
-    actions: { loginWithGoogle, signInWithEmail, signOut },
+    actions: { signUpWithEmail },
   } = useAuthContext();
   const onSubmit: SubmitHandler<LoginFormDefaultValues> = (data) => {
     const { email, password } = data;
-    signInWithEmail(email, password);
+    signUpWithEmail(email, password);
   };
 
   return (
@@ -60,28 +58,16 @@ const SignInForm = (): JSX.Element => {
               <p className="text-error">{errors.password?.message}</p>
             </div>
             <button type="submit" className="btn btn-primary btn-block mt-5">
-              Sign in
+              Sign Up
             </button>
           </form>
           <div className="divider" />
           <div className="prose">
-            <p className="mb-1">You don&apos;t have account yet?</p>
-            <Link href={Route.signup}>
-              <a>Sign up</a>
+            <p className="mb-1">You do have account?</p>
+            <Link href={Route.login}>
+              <a>Sign In</a>
             </Link>
           </div>
-          <div className="divider">OR</div>
-          <button type="button" className="btn" onClick={loginWithGoogle}>
-            <div className="mr-3">
-              <GoogleIcon />
-            </div>
-            Sign in with google
-          </button>
-          {user && (
-            <button type="button" className="btn" onClick={signOut}>
-              logout
-            </button>
-          )}
         </div>
       </div>
     </div>

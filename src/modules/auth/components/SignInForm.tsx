@@ -2,12 +2,12 @@ import Link from 'next/link';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import LoginFormSchema, {
-  LoginFormDefaultValues,
-  defaultValues,
-} from '@components/login/SignInForm/loginFormSchema';
-import { useAuthContext } from '@contextProviders/authProvider';
-import Route from '@consts/route';
+import { GoogleIcon } from '@assets/icons';
+import RouteConstant from '@consts/route';
+
+import { useAuthContext } from '../authProvider';
+
+import LoginFormSchema, { LoginFormDefaultValues, defaultValues } from './loginFormSchema';
 
 const SignInForm = (): JSX.Element => {
   const {
@@ -19,11 +19,12 @@ const SignInForm = (): JSX.Element => {
     resolver: zodResolver(LoginFormSchema),
   });
   const {
-    actions: { signUpWithEmail },
+    user,
+    actions: { loginWithGoogle, signInWithEmail, signOut },
   } = useAuthContext();
   const onSubmit: SubmitHandler<LoginFormDefaultValues> = (data) => {
     const { email, password } = data;
-    signUpWithEmail(email, password);
+    signInWithEmail(email, password);
   };
 
   return (
@@ -58,16 +59,28 @@ const SignInForm = (): JSX.Element => {
               <p className="text-error">{errors.password?.message}</p>
             </div>
             <button type="submit" className="btn btn-primary btn-block mt-5">
-              Sign Up
+              Sign in
             </button>
           </form>
           <div className="divider" />
           <div className="prose">
-            <p className="mb-1">You do have account?</p>
-            <Link href={Route.login}>
-              <a>Sign In</a>
+            <p className="mb-1">You don&apos;t have account yet?</p>
+            <Link href={RouteConstant.SignUp}>
+              <a>Sign up</a>
             </Link>
           </div>
+          <div className="divider">OR</div>
+          <button type="button" className="btn" onClick={loginWithGoogle}>
+            <div className="mr-3">
+              <GoogleIcon />
+            </div>
+            Sign in with google
+          </button>
+          {user && (
+            <button type="button" className="btn" onClick={signOut}>
+              logout
+            </button>
+          )}
         </div>
       </div>
     </div>

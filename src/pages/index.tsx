@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
+import RouteConstant from '@consts/route';
+
 const Home: NextPage = () => (
   <div className="navbar bg-base-100">
     <div className="navbar-start">
@@ -90,7 +92,7 @@ const Home: NextPage = () => (
       </ul>
     </div>
     <div className="navbar-end">
-      <Link href={Route.login}>
+      <Link href={RouteConstant.Login}>
         <a className="btn">Get started</a>
       </Link>
     </div>

@@ -1,7 +1,7 @@
-enum Route {
-  home = '/',
-  login = '/login',
-  signup = '/signup',
+enum RouteConstant {
+  Home = '/',
+  Login = '/login',
+  SignUp = '/signup',
 }
 
-export default Route;
+export default RouteConstant;

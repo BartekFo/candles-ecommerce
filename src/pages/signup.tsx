@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 
-import SignUpForm from '@components/login/SignInForm/SignUpForm';
+import SignUpForm from '@components/../modules/auth/components/SignUpForm';
 
 const SignUp: NextPage = () => <SignUpForm />;
 

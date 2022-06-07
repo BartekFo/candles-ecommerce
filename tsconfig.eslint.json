@@ -6,6 +6,7 @@
     "**/*.tsx",
     ".eslintrc.js",
     "tailwind.config.js",
-    "postcss.config.js"
+    "postcss.config.js",
+    "commitlint.config.js"
   ]
 }

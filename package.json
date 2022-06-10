@@ -9,16 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@firebase/auth": "^0.20.2",
+    "@hookform/resolvers": "^2.8.10",
     "@masterborn/eslint-config": "^0.0.14",
     "@next/bundle-analyzer": "^12.1.6",
     "@svgr/webpack": "^6.2.1",
     "@typescript-eslint/parser": "^5.26.0",
     "daisyui": "^2.15.2",
     "eslint-plugin-prettier": "^4.0.0",
+    "firebase": "^9.8.2",
     "next": "12.1.6",
     "next-compose-plugins": "^2.2.1",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-firebase-hooks": "^5.0.3",
+    "react-hook-form": "^7.31.3",
+    "zod": "^3.17.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",

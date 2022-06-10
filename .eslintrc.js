@@ -14,5 +14,8 @@ module.exports = {
     'prettier/prettier': ['error'],
     'prefer-arrow-callback': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'jsx-a11y/label-has-associated-control': 'off',
+    'jsx-a11y/label-has-for': 'off',
+    'jsx-a11y/no-noninteractive-tabindex': 'off',
   },
 };

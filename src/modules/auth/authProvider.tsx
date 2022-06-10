@@ -29,26 +29,30 @@ const AuthProvider = ({ children }: PropsWithChildren<unknown>): JSX.Element => 
   };
 
   const signUpWithEmail = (email: string, password: string): void => {
-    createUserWithEmailAndPassword(auth, email, password).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-
-      console.log(errorCode, errorMessage);
-    });
+    createUserWithEmailAndPassword(auth, email, password);
+    // TODO: Handle Errors
+    //   .catch((error) => {
+    //   const errorCode = error.code;
+    //   const errorMessage = error.message;
+    // });
   };
 
   const signInWithEmail = (email: string, password: string): void => {
-    signInWithEmailAndPassword(auth, email, password).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-    });
+    signInWithEmailAndPassword(auth, email, password);
+    // TODO: Handle errors for logins
+    //   .catch((error) => {
+    //   const errorCode = error.code;
+    //   const errorMessage = error.message;
+    //   // ..
+    // });
   };
 
   const signOut = (): void => {
-    signOutFirebase(auth).catch((error) => {
-      // An error happened.
-    });
+    signOutFirebase(auth);
+    // TODO: Same as earlier
+    //   .catch((error) => {
+    //   // An error happened.
+    // });
   };
 
   useEffect(() => {

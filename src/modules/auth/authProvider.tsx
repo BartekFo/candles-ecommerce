@@ -1,16 +1,27 @@
-import { createContext, PropsWithChildren, useContext, useEffect, useMemo, useState } from 'react';
+import {
+  createContext,
+  PropsWithChildren,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signInWithRedirect,
+  signInWithPopup,
   signOut as signOutFirebase,
   User,
 } from 'firebase/auth';
+import { useRouter } from 'next/router';
 
 import { auth, provider } from '@api/firebase/firebaseConfig';
+import RouteConstant from '@consts/route';
 
 interface AuthContextValue {
   user: User | null;
+  isLoginProcess: boolean;
   actions: {
     loginWithGoogle: () => void;
     signUpWithEmail: (email: string, password: string) => void;
@@ -23,10 +34,16 @@ const authContext = createContext({} as AuthContextValue);
 
 const AuthProvider = ({ children }: PropsWithChildren<unknown>): JSX.Element => {
   const [user, setUser] = useState<User | null>(null);
+  const router = useRouter();
+  const [isLoginProcess, setIsLoginProcess] = useState(false);
 
-  const loginWithGoogle = (): void => {
-    signInWithRedirect(auth, provider);
-  };
+  const loginWithGoogle = useCallback((): void => {
+    setIsLoginProcess(true);
+    signInWithPopup(auth, provider).then(() => {
+      setIsLoginProcess(false);
+      router.push(RouteConstant.Home);
+    });
+  }, [router]);
 
   const signUpWithEmail = (email: string, password: string): void => {
     createUserWithEmailAndPassword(auth, email, password);
@@ -37,15 +54,22 @@ const AuthProvider = ({ children }: PropsWithChildren<unknown>): JSX.Element => 
     // });
   };
 
-  const signInWithEmail = (email: string, password: string): void => {
-    signInWithEmailAndPassword(auth, email, password);
-    // TODO: Handle errors for logins
-    //   .catch((error) => {
-    //   const errorCode = error.code;
-    //   const errorMessage = error.message;
-    //   // ..
-    // });
-  };
+  const signInWithEmail = useCallback(
+    (email: string, password: string): void => {
+      setIsLoginProcess(true);
+      signInWithEmailAndPassword(auth, email, password).then(() => {
+        setIsLoginProcess(false);
+        router.push(RouteConstant.Home);
+      });
+      // TODO: Handle errors for logins
+      //   .catch((error) => {
+      //   const errorCode = error.code;
+      //   const errorMessage = error.message;
+      //   // ..
+      // });
+    },
+    [router]
+  );
 
   const signOut = (): void => {
     signOutFirebase(auth);
@@ -60,9 +84,16 @@ const AuthProvider = ({ children }: PropsWithChildren<unknown>): JSX.Element => 
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    if (user) {
+      setIsLoginProcess(false);
+    }
+  }, [setIsLoginProcess, user]);
+
   const value = useMemo(
     () => ({
       user,
+      isLoginProcess,
       actions: {
         loginWithGoogle,
         signUpWithEmail,
@@ -70,7 +101,7 @@ const AuthProvider = ({ children }: PropsWithChildren<unknown>): JSX.Element => 
         signOut,
       },
     }),
-    [user]
+    [isLoginProcess, loginWithGoogle, signInWithEmail, user]
   );
 
   return <authContext.Provider value={value}>{children}</authContext.Provider>;
@@ -78,4 +109,12 @@ const AuthProvider = ({ children }: PropsWithChildren<unknown>): JSX.Element => 
 
 export default AuthProvider;
 
-export const useAuthContext = (): AuthContextValue => useContext(authContext);
+export const useAuthContext = (): AuthContextValue => {
+  const context = useContext(authContext);
+
+  if (!context) {
+    throw new Error('Component can not be used outside of AuthProvider');
+  }
+
+  return context;
+};

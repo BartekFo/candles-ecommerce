@@ -17,12 +17,5 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': 'off',
     'jsx-a11y/label-has-for': 'off',
     'jsx-a11y/no-noninteractive-tabindex': 'off',
-    'import/order': [
-      'error',
-      {
-        groups: [['builtin', 'external']],
-        'newlines-between': 'always',
-      },
-    ],
   },
 };

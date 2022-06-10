@@ -4,6 +4,7 @@
 .idea
 .vscode
 
+.eslintcache
 # dependencies
 /node_modules
 /.pnp

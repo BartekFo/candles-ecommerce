@@ -2,17 +2,21 @@ import Image from 'next/image';
 
 import { useAuthContext } from '@modules/auth/authProvider';
 
-const ProfileAvatar = (): JSX.Element => {
+const ProfileAvatar = (): JSX.Element | null => {
   const {
     user,
     actions: { signOut },
   } = useAuthContext();
 
+  if (!user) {
+    return null;
+  }
+
   return (
     <>
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <Image className="rounded-full" layout="fill" src={user.photoURL} />
+          {user?.photoURL && <Image className="rounded-full" layout="fill" src={user.photoURL} />}
         </div>
       </label>
       <ul

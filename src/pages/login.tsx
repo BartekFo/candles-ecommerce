@@ -1,12 +1,12 @@
-import { NextPage } from 'next';
 import Link from 'next/link';
 import { BsArrowLeft } from 'react-icons/bs';
+import { ReactElement } from 'react';
 
 import SignInForm from '@modules/auth/components/SignInForm';
 import RouteConstant from '@consts/route';
 import { useAuthContext } from '@modules/auth/authProvider';
 
-const Login: NextPage = () => {
+const Login = (): ReactElement => {
   const { isLoginProcess } = useAuthContext();
 
   if (isLoginProcess) {
@@ -31,3 +31,7 @@ const Login: NextPage = () => {
 };
 
 export default Login;
+
+Login.getLayout = function getLayout(page: ReactElement): ReactElement {
+  return page;
+};

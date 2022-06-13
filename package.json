@@ -28,6 +28,7 @@
     "@masterborn/eslint-config": "0.0.14",
     "@next/bundle-analyzer": "12.1.6",
     "@svgr/webpack": "6.2.1",
+    "@tailwindcss/typography": "0.5.2",
     "@typescript-eslint/parser": "5.26.0",
     "daisyui": "2.15.2",
     "eslint-plugin-prettier": "4.0.0",
@@ -40,8 +41,8 @@
     "react-dom": "18.1.0",
     "react-firebase-hooks": "5.0.3",
     "react-hook-form": "7.31.3",
-    "zod": "3.17.3",
-    "@tailwindcss/typography": "0.5.2"
+    "react-icons": "4.4.0",
+    "zod": "3.17.3"
   },
   "devDependencies": {
     "@types/node": "17.0.36",
